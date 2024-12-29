@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Organic.BusinnesLayer.Abstract
 {
-    internal interface IGenericService
+    public interface IGenericService<T> where T : class
     {
+        void TInsert(T entity);
+        void TUpdate(T entity);
+        void TDelete(T id);
+        List<T> TGetAll();
+        T TGetById(int id);
     }
 }
