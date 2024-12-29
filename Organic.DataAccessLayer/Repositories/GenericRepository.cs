@@ -15,30 +15,30 @@ namespace Organic.DataAccessLayer.Repositories
         {
             _context = context;
         }
-
-        public void Delete(T entity)
+        public void Delete(T id)
         {
-            throw new NotImplementedException();
+            var value = _context.Set<T>().Find(id);
+            _context.Set<T>().Remove(id);
+            _context.SaveChanges();
         }
-
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().ToList();
         }
-
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().ToList()[id];
+            //return _context.Set<T>().Find(id);
         }
-
         public void Insert(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Add(entity);
+            _context.SaveChanges();
         }
-
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Update(entity);
+            _context.SaveChanges();
         }
     }
 }
