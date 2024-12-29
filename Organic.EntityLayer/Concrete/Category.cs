@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Organic.EntityLayer.Concrete
 {
-    internal class Category
+    public class Category
     {
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
+        public string CategoryStatus { get; set; }
     }
 }
