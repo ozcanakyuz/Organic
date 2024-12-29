@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Organic.DataAccessLayer.Abstract
 {
-    internal interface IGenericDal
+    public interface IGenericDal<T> where T : class
     {
+        void Insert(T entity);
+        void Update(T entity);
+        void Delete(T entity);
+        List<T> GetAll();
+        T GetById(int id);
     }
 }
