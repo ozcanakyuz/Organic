@@ -13,4 +13,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Organic.EntityLayer\Organic.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>
