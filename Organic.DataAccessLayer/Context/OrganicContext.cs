@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Organic.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,11 @@ namespace Organic.DataAccessLayer.Context
         {
             optionsBuilder.UseSqlServer("Server=localhost;Initial Catalog=OrganicDb;Integrated Security=true");
         }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
     }
 }
