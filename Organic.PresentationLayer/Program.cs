@@ -1,6 +1,18 @@
+using Organic.BusinnesLayer.Abstract;
+using Organic.BusinnesLayer.Concrete;
+using Organic.DataAccessLayer.Abstract;
+using Organic.DataAccessLayer.Context;
+using Organic.DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<OrganicContext>();
+
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
