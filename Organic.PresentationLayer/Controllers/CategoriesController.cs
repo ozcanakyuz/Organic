@@ -38,6 +38,17 @@ namespace Organic.PresentationLayer.Controllers
             _categoryService.TInsert(category);
             return RedirectToAction("CategoryList");
         }
+        [HttpGet]
+        public IActionResult UpdateCategory(int id)
+        {
+            var values = _categoryService.TGetById(id);
+            return View(values);
+        }
+        public IActionResult UpdateCategory(Category category)
+        {
+            _categoryService.TUpdate(category);
+            return RedirectToAction("CategoryList");
+        }
 
         public IActionResult DeleteCategory(int id)
         {

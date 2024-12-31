@@ -17,17 +17,9 @@ namespace Organic.DataAccessLayer.Repositories
         }
         public void Delete(int id)
         {
-            var entity = _context.Categories.Find(id);
-            if (entity != null)
-            {
-                _context.Categories.Remove(entity);
-                _context.SaveChanges();
-            }
-            else
-            {
-                Console.WriteLine("Kategori bulunamadı.");
-            }
-
+            var value = _context.Set<T>().Find(id);
+            _context.Set<T>().Remove(value);
+            _context.SaveChanges();
         }
         public List<T> GetAll()
         {
@@ -35,8 +27,8 @@ namespace Organic.DataAccessLayer.Repositories
         }
         public T GetById(int id)
         {
-            return _context.Set<T>().ToList()[id];
-            //return _context.Set<T>().Find(id);
+            //return _context.Set<T>().ToList()[id];
+            return _context.Set<T>().Find(id);
         }
         public void Insert(T entity)
         {
