@@ -15,5 +15,10 @@ namespace Organic.DataAccessLayer.EntityFramework
         public EfProductDal(OrganicContext context) : base(context)
         {
         }
+
+        public List<Product> ProductListWithCategory()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace Organic.DataAccessLayer.Abstract
 {
     public interface IProductDal : IGenericDal<Product>
     {
+        List<Product> ProductListWithCategory();
     }
 }
