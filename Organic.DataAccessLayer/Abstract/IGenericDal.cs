@@ -10,7 +10,7 @@ namespace Organic.DataAccessLayer.Abstract
     {
         void Insert(T entity);
         void Update(T entity);
-        void Delete(T id);
+        void Delete(int id);
         List<T> GetAll();
         T GetById(int id);
     }

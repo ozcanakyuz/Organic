@@ -1,0 +1,38 @@
+﻿@model Category
+
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid py-4">
+	<div class="row">
+		<div class="col-12" style="padding-left:18rem;">
+			<div class="card mb-4">
+				<div class="card-header pb-0">
+					<h6>Authors table</h6>
+				</div>
+				<div class="card-body px-2 pt-2 pb-2">
+
+                    <form method="post">
+                        <label>Category Name</label>
+                        <input type="text" asp-for="CategoryName" class="form-control" />
+                        <br />
+
+                        <label>Status</label>
+                        <select asp-for="CategoryStatus" class="form-control">
+                            <option value="true">Active</option>
+                            <option value="false">Deactive</option>
+                        </select>
+                        <br />
+
+                        <button class="btn btn-primary">Create Category</button>
+                    </form>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

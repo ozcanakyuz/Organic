@@ -15,11 +15,19 @@ namespace Organic.DataAccessLayer.Repositories
         {
             _context = context;
         }
-        public void Delete(T id)
+        public void Delete(int id)
         {
-            var value = _context.Set<T>().Find(id);
-            _context.Set<T>().Remove(id);
-            _context.SaveChanges();
+            var entity = _context.Categories.Find(id);
+            if (entity != null)
+            {
+                _context.Categories.Remove(entity);
+                _context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("Kategori bulunamadı.");
+            }
+
         }
         public List<T> GetAll()
         {

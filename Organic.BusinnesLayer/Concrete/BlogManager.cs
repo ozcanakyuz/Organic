@@ -17,7 +17,7 @@ namespace Organic.BusinnesLayer.Concrete
             _blogDal = blogDal;
         }
 
-        public void TDelete(Blog id)
+        public void TDelete(int id)
         {
             _blogDal.Delete(id);
         }

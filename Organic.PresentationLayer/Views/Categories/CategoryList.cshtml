@@ -53,32 +53,33 @@
 											<p class="text-xs text-secondary mb-0">...</p>
 										</td>
 										<td class="align-middle text-center text-sm">
-											@if (@item.CategoryStatus == "true") {
+											@if (@item.CategoryStatus == true)
+											{
 												<span class="badge badge-sm bg-gradient-success">Active</span>
-											} else {
+											}
+											else
+											{
 												<span class="badge badge-sm bg-gradient-danger">Deactive</span>
 											}
 										</td>
 										<td class="align-middle text-center text-sm">
-											<a href="/Categories/CategoryDelete/" class="btn btn-outline-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+											<a href="/Categories/DeleteCategory/@item.CategoryId" class="btn btn-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
 												Delete
 											</a>
 										</td>
 										<td class="align-middle text-center text-sm">
-											<a href="/Categories/CategoryUpdate/" class="btn btn-outline-success font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+											<a href="/Categories/UpdateCategory/@item.CategoryId" class="btn btn-success font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
 												Edit
 											</a>
 										</td>
 									</tr>
 								}
-
 							</tbody>
 						</table>
+						<a href="/Categories/CreateCategory/" class="btn btn-primary m-2">Add New Category</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-

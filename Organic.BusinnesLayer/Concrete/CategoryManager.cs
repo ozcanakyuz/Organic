@@ -17,7 +17,7 @@ namespace Organic.BusinnesLayer.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void TDelete(Category id)
+        public void TDelete(int id)
         {
             _categoryDal.Delete(id);
         }

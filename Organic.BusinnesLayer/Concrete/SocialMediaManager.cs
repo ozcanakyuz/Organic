@@ -17,7 +17,7 @@ namespace Organic.BusinnesLayer.Concrete
             _socialMediaDal = socialMediaDal;
         }
 
-        public void TDelete(SocialMedia id)
+        public void TDelete(int id)
         {
             _socialMediaDal.Delete(id);
         }

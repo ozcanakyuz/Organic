@@ -17,7 +17,7 @@ namespace Organic.BusinnesLayer.Concrete
             _sliderDal = sliderDal;
         }
 
-        public void TDelete(Slider id)
+        public void TDelete(int id)
         {
             _sliderDal.Delete(id);
         }
