@@ -1,4 +1,5 @@
-﻿using Organic.DataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using Organic.DataAccessLayer.Abstract;
 using Organic.DataAccessLayer.Context;
 using Organic.DataAccessLayer.Repositories;
 using Organic.EntityLayer.Concrete;
@@ -12,13 +13,16 @@ namespace Organic.DataAccessLayer.EntityFramework
 {
     public class EfProductDal : GenericRepository<Product>, IProductDal
     {
+        private readonly OrganicContext _context;
         public EfProductDal(OrganicContext context) : base(context)
         {
+            _context = context;
         }
 
         public List<Product> ProductListWithCategory()
         {
-            throw new NotImplementedException();
+            var values = _context.Products.Include(x => x.Category).ToList();
+            return values;
         }
     }
 }

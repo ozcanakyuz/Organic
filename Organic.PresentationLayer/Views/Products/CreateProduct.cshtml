@@ -19,10 +19,10 @@
                         <input type="text" asp-for="ProductName" class="form-control" />
                         <br />
                         <label>Category</label>
-                        <input type="text" asp-for="Category" class="form-control" />
+                        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.categories" ></select>
                         <br />
                         <label>Stock</label>
-                        <input type="text" asp-for="Stock" class="form-control" />
+                        <input type="number" asp-for="Stock" class="form-control" />
                         <br />
                         <label>Price</label>
                         <input type="text" asp-for="Price" class="form-control" />

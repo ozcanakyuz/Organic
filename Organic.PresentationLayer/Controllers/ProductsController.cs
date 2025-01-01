@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Organic.BusinnesLayer.Abstract;
 using Organic.EntityLayer.Concrete;
 
@@ -7,10 +8,11 @@ namespace Organic.PresentationLayer.Controllers
     public class ProductsController : Controller
     {
         private readonly IProductService _productService;
-
-        public ProductsController(IProductService productService)
+        private readonly ICategoryService _categoryService;
+        public ProductsController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
+            _categoryService = categoryService;
         }
 
         public IActionResult ProductList()
@@ -21,6 +23,8 @@ namespace Organic.PresentationLayer.Controllers
         [HttpGet]
         public IActionResult CreateProduct()
         {
+            var values = _categoryService.TGetAll();
+            ViewBag.categories = new SelectList(values, "CategoryId", "CategoryName");
             return View();
         }
         [HttpPost]
@@ -46,6 +50,12 @@ namespace Organic.PresentationLayer.Controllers
         {
             _productService.TDelete(id);
             return RedirectToAction("ProductList");
+        }
+
+        public IActionResult ProductListWithCategory()
+        {
+            var values = _productService.TProductListWithCategory();
+            return View(values);
         }
     }
 }
