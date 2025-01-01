@@ -37,6 +37,8 @@ namespace Organic.PresentationLayer.Controllers
         [HttpGet]
         public IActionResult UpdateProduct(int id)
         {
+            var productCategory = _categoryService.TGetAll();
+            ViewBag.categories = new SelectList(productCategory, "CategoryId", "CategoryName");
             var values = _productService.TGetById(id);
             return View(values);
         }
