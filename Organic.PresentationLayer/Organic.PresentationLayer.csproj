@@ -363,6 +363,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Organic.BusinnesLayer\Organic.BusinnesLayer.csproj" />
+    <ProjectReference Include="..\Organic.DtoLayer\Organic.DtoLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
