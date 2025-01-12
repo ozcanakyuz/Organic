@@ -34,5 +34,10 @@ namespace Organic.PresentationLayer.Controllers
             _aboutService.TInsert(values);
             return RedirectToAction("AboutList");
         }
+        public IActionResult DeleteAbout(int id)
+        {
+            _aboutService.TDelete(id);
+            return RedirectToAction("AboutList");
+        }
     }
 }
