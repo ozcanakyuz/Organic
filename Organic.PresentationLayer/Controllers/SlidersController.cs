@@ -46,7 +46,7 @@ namespace Organic.PresentationLayer.Controllers
             return View(_mapper.Map<GetByIdSliderDto>(value));
         }
 
-
+        [HttpPost]
         public IActionResult UpdateSlider(UpdateSliderDto updateSliderDto)
         {
             var value = _mapper.Map<Slider>(updateSliderDto);
