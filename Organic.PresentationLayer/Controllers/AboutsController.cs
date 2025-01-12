@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Organic.BusinnesLayer.Abstract;
 using Organic.DtoLayer.Dtos.AboutDtos;
+using Organic.EntityLayer.Concrete;
 
 namespace Organic.PresentationLayer.Controllers
 {
@@ -21,6 +22,17 @@ namespace Organic.PresentationLayer.Controllers
             var values = _aboutService.TGetAll();
             return View(_mapper.Map<List<ResultAboutDto>>(values));
         }
-        
+        [HttpGet]
+        public IActionResult CreateAbout()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateAbout(CreateAboutDto createAboutDto)
+        {
+            var values = _mapper.Map<About>(createAboutDto);
+            _aboutService.TInsert(values);
+            return RedirectToAction("AboutList");
+        }
     }
 }
