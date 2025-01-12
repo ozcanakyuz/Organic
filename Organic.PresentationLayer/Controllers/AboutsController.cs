@@ -39,5 +39,18 @@ namespace Organic.PresentationLayer.Controllers
             _aboutService.TDelete(id);
             return RedirectToAction("AboutList");
         }
+        [HttpGet]
+        public IActionResult UpdateAbout(int id)
+        {
+            var value = _aboutService.TGetById(id);
+            return View(_mapper.Map<GetByIdAboutDto>(value));
+        }
+        [HttpPost]
+        public IActionResult UpdateAbout(UpdateAboutDto updateAboutDto)
+        {
+            var value = _mapper.Map<About>(updateAboutDto);
+            _aboutService.TUpdate(value);
+            return RedirectToAction("AboutList");
+        }
     }
 }
