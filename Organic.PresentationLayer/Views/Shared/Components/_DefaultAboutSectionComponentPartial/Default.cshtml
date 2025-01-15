@@ -1,0 +1,32 @@
+﻿@model List<About>
+
+<section class="py-5">
+	<div class="container-lg">
+		<div class="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
+
+			@if (Model != null)
+			{
+				@foreach (var item in Model)
+				{
+					<div class="col text-center">
+						<div class="card mb-3 border border-dark-subtle p-3 bg-light bg-gradient">
+							<div class="text-dark mb-3">
+								<i class="@item.Icon display-4 mx-2"></i>
+								@* <svg width="32" height="32"><use xlink:href="#package"></use></svg> *@
+							</div>
+							<div class="card-body p-0">
+								<h5>@item.Title</h5>
+								<p class="card-text">@item.Description</p>
+							</div>
+						</div>
+					</div>
+				}
+			}
+			else
+			{
+				<p>EMPTY ABOUT</p>
+			}
+
+		</div>
+	</div>
+</section>
