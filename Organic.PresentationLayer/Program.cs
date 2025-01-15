@@ -23,6 +23,9 @@ builder.Services.AddScoped<ISliderService, SliderManager>();
 builder.Services.AddScoped<IAboutDal, EfAboutDal>();
 builder.Services.AddScoped<IAboutService, AboutManager>();
 
+builder.Services.AddScoped<IBlogDal, EfBlogDal>();
+builder.Services.AddScoped<IBlogService, BlogManager>();
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddControllersWithViews();
