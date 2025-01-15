@@ -52,7 +52,14 @@
 											<p class="text-xs font-weight-bold mb-0">@item.CreatedAt</p>
 										</td>
 										<td>
-											<p class="text-xs font-weight-bold mb-0">@item.Description</p>
+											<p class="text-xs font-weight-bold mb-0">
+												@{
+													var description = item.Description;
+													var words = description.Split(' ');
+													var truncatedDescription = words.Length > 7 ? string.Join(" ", words.Take(10)) + "..." : string.Join(" ", words);
+												}
+												@truncatedDescription
+											</p>
 										</td>
 										<td class="align-middle text-center text-sm">
 											<a href="/Blogs/DeleteBlog/@item.BlogId" class="btn btn-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete Blog">

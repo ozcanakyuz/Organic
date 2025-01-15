@@ -29,6 +29,7 @@ namespace Organic.PresentationLayer.Controllers
             _blogService.TInsert(blog);
             return RedirectToAction("BlogList");
         }
+
         [HttpGet]
         public IActionResult UpdateBlog(int id)
         {

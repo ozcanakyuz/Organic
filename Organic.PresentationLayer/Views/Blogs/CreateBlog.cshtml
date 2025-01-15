@@ -1,0 +1,42 @@
+﻿@model Blog
+
+@{
+	ViewData["Title"] = "CreateBlog";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid py-4">
+	<div class="row">
+		<div class="col-12" style="padding-left:18rem;">
+			<div class="card mb-4">
+				<div class="card-header pb-0">
+					<h6>Create Blog Table</h6>
+				</div>
+				<div class="card-body px-2 pt-2 pb-2">
+
+					<form method="post">
+						<label>Blog Title</label>
+						<input type="text" asp-for="Title" class="form-control" />
+						<br />
+						<label>Category Title</label>
+						<input type="text" asp-for="CategoryTitle" class="form-control" />
+						<br />
+						@*>Created At *@
+						<input type="hidden" asp-for="CreatedAt" value="@DateTime.Now" />
+
+						<label>Description</label>
+						<input type="text" asp-for="Description" class="form-control" />
+						<br />
+						<label>Image Url</label>
+						<input type="text" asp-for="ImageUrl" class="form-control" />
+						<br />
+
+						<button class="btn btn-primary">Create Blog</button>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
